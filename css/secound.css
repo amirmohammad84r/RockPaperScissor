@@ -1,2 +1,32 @@
 #middle {
+  width: 60%;
+  height: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.half {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.rextOnIcons {
+  color: white;
+  font-size: 22px;
+}
+.icon {
+  background-color: white;
+  padding: 80px;
+  border-radius: 50%;
+  border: yellow 40px solid;
+}
+img {
+  width: 100px;
+  height: 100px;
+}
+.random-icon {
+  border: red 40px solid;
 }

@@ -25,11 +25,54 @@
         </div>
       </div>
 
-      <div id="middle"></div>
+      <div id="middle">
+        <div class="halfLeft half">
+          <div class="rextOnIcons">YOU PICKED</div>
+          <div class="icon">
+            <img id="selected" alt="loading" />
+          </div>
+        </div>
+        <div class="halfRight half">
+          <div class="rextOnIcons">THE HOUSE PICKED</div>
+          <div class="icon random-icon">
+            <img id="random_icon" alt="loading" />
+          </div>
+        </div>
+      </div>
 
       <div id="button">
         <button>RULES</button>
       </div>
     </div>
+    <script>
+      let selectedNumber = location.search[location.search.length - 1];
+      let itemSelected = document.getElementById("selected");
+      let randomIcon = document.getElementById("random_icon");
+      const random = (min, max) =>
+        Math.floor(Math.random() * (max - min)) + min;
+      switch (selectedNumber) {
+        case "1":
+          itemSelected.src = "source/icon-paper.svg";
+          console.log(itemSelected);
+          break;
+        case "2":
+          itemSelected.src = "source/icon-scissors.svg";
+          break;
+        case "3":
+          itemSelected.src = "source/icon-rock.svg";
+          break;
+      }
+      switch (random(1, 3)) {
+        case 1:
+          randomIcon.src = "source/icon-paper.svg";
+          break;
+        case 2:
+          randomIcon.src = "source/icon-scissors.svg";
+          break;
+        case 3:
+          randomIcon.src = "source/icon-rock.svg";
+          break;
+      }
+    </script>
   </body>
 </html>
