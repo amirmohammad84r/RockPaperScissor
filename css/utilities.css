@@ -68,3 +68,27 @@ body {
   font-size: 22px;
   cursor: pointer;
 }
+.outRules {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.rules {
+  background-color: aliceblue;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.rules > img {
+  width: 304px;
+  height: 270px;
+}

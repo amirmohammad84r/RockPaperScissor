@@ -59,5 +59,22 @@
         />
       </svg>
     </div>
+    <div class="outRules">
+      <div class="rules">
+        <div>RULES</div>
+        <img src="source/image-rules.svg" alt="loading" />
+      </div>
+    </div>
+
+    <script>
+      document.getElementById("button").addEventListener("mouseover", () => {
+        document.getElementById("button").addEventListener("click", () => {
+          document.querySelector(".outRules").style.visibility = "visible";
+        });
+      });
+      document.querySelector(".outRules").addEventListener("click", () => {
+        document.querySelector(".outRules").style.visibility = "hidden";
+      });
+    </script>
   </body>
 </html>

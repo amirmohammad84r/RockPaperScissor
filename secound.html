@@ -32,6 +32,9 @@
             <img id="selected" alt="loading" />
           </div>
         </div>
+
+        <div id="whatHappend"></div>
+
         <div class="halfRight half">
           <div class="rextOnIcons">THE HOUSE PICKED</div>
           <div class="icon random-icon">
@@ -44,7 +47,22 @@
         <button>RULES</button>
       </div>
     </div>
+
+    <div class="outRules">
+      <div class="rules">
+        <div>RULES</div>
+        <img src="source/image-rules.svg" alt="loading" />
+      </div>
+    </div>
     <script>
+      document.getElementById("button").addEventListener("mouseover", () => {
+        document.getElementById("button").addEventListener("click", () => {
+          document.querySelector(".outRules").style.visibility = "visible";
+        });
+      });
+      document.querySelector(".outRules").addEventListener("click", () => {
+        document.querySelector(".outRules").style.visibility = "hidden";
+      });
       let selectedNumber = location.search[location.search.length - 1];
       let itemSelected = document.getElementById("selected");
       let randomIcon = document.getElementById("random_icon");
@@ -53,7 +71,6 @@
       switch (selectedNumber) {
         case "1":
           itemSelected.src = "source/icon-paper.svg";
-          console.log(itemSelected);
           break;
         case "2":
           itemSelected.src = "source/icon-scissors.svg";
@@ -62,7 +79,8 @@
           itemSelected.src = "source/icon-rock.svg";
           break;
       }
-      switch (random(1, 3)) {
+      let randomNumber = random(1, 4);
+      switch (randomNumber) {
         case 1:
           randomIcon.src = "source/icon-paper.svg";
           break;
@@ -71,6 +89,48 @@
           break;
         case 3:
           randomIcon.src = "source/icon-rock.svg";
+          break;
+      }
+      const loseWin = document.getElementById("whatHappend");
+      switch (selectedNumber) {
+        case "1":
+          switch (randomNumber) {
+            case 1:
+              loseWin.innerHTML = "You Have Draw";
+              break;
+            case 2:
+              loseWin.innerHTML = "You Have Lose";
+              break;
+            case 3:
+              loseWin.innerHTML = "You Have Win";
+              break;
+          }
+          break;
+        case "2":
+          switch (randomNumber) {
+            case 1:
+              loseWin.innerHTML = "You Have Win";
+              break;
+            case 2:
+              loseWin.innerHTML = "You Have Draw";
+              break;
+            case 3:
+              loseWin.innerHTML = "You Have Lose";
+              break;
+          }
+          break;
+        case "3":
+          switch (randomNumber) {
+            case 1:
+              loseWin.innerHTML = "You Have Lose";
+              break;
+            case 2:
+              loseWin.innerHTML = "You Have Win";
+              break;
+            case 3:
+              loseWin.innerHTML = "You Have Draw";
+              break;
+          }
           break;
       }
     </script>
